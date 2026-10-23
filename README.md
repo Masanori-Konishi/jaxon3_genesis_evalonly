@@ -2,7 +2,6 @@
 
 学習済み JAXON3 ランニングポリシーを Genesis の平面上で実行する評価専用リポジトリです。
 配布用 `policy.pt` と対応する `eval_config.json`、URDF・メッシュを使って実行します。
-報酬関数、報酬係数、学習処理、critic、optimizer、学習ログ、ハードル・模倣データは含みません。
 
 ## 環境構築
 
@@ -35,7 +34,7 @@ jaxon3_evalonly/
 ├── jaxon3_env_evalonly.py
 ├── requirements.txt
 ├── policy/
-│   ├── policy.pt                 # 別途受け取る推論用モデル（Git 管理対象外）
+│   ├── policy.pt                 # 推論用学習済モデル
 │   ├── eval_config.json          # この policy.pt と対になる評価設定
 │   └── models/
 │       ├── urdf/                # 選択された 1 個の URDF
@@ -45,7 +44,6 @@ jaxon3_evalonly/
 
 `policy.pt` は TorchScript 形式です。学習時の `model_2500.pt` 等を名前だけ変更しても使えません。
 提供者が後述のコマンドで推論用に変換します。観測の正規化統計もこのファイルに含まれます。
-Git から取得した直後は `.pt` がないため、提供者から受け取ったファイルを `policy/policy.pt` に置いてください。
 評価設定には関節順序・PD ゲイン・観測スケールなど、推論とシミュレーションに必要な項目だけを保存します。
 起動時に重みとモデルファイルの SHA-256 を確認し、異なる組み合わせを検出します。
 
@@ -58,6 +56,7 @@ python jaxon3_eval.py --command 3.0 0.0 0.0
 ```
 
 `--command VX VY YAW` は前進速度 [m/s]、横方向速度 [m/s]、旋回角速度 [rad/s] です。
+model_2500.ptは主に前方向への移動に特化したポリシーになっています。
 省略時は `3.0 0.0 0.0`。ビューアのカメラはロボットを追従します。
 終了するには Ctrl+C またはビューアのウィンドウを閉じます。初回は物理カーネルのコンパイルに時間がかかります。
 
@@ -97,7 +96,7 @@ python jaxon3_eval.py --bundle /path/to/another_policy --command 5.0 0.0 0.0
 
 この構成は共有したポリシーの走行を再生・観察するためのものです。学習環境でのスコア集計や、その終了条件を含む性能評価は行いません。
 
-## モデル提供者: 別のチェックポイントを書き出す
+## モデル提供者用メモ: 別のチェックポイントを書き出す
 
 この操作は、元のチェックポイントと対応する `cfgs.pkl` を保持する側だけで行います。
 自分が作成した信頼できる `cfgs.pkl` を指定してください（pickle の読込はコードを実行できる形式です）。
@@ -124,19 +123,6 @@ URDF の元の保存場所が変わった場合は `--model-dir /path/to/models/
 共有するのは出力フォルダの内容です。元の `cfgs.pkl` と学習チェックポイントは共有用リポジトリに置きません。
 新しいモデルへ差し替える際は、JSON・URDF・メッシュも同じ出力一式に更新してください。
 
-## GitHub への登録
-
-`.gitignore` で `.pt`、`.pkl`、ログ、キャッシュを除外しています。
-コード・評価用 JSON・モデルデータを Git に登録し、`policy.pt` は別途受け渡します。
-
-```bash
-git add README.md requirements.txt .gitignore jaxon3_eval.py jaxon3_env_evalonly.py tools tests policy
-git diff --cached --stat
-git commit -m "Add standalone JAXON3 running evaluation"
-git remote add origin <共有用リポジトリのURL>
-git push -u origin main
-```
-
 ## トラブル対応
 
 - `policy.pt does not match ...`: 提供者から同時に出力された `.pt` と JSON を使ってください。
@@ -157,5 +143,6 @@ git push -u origin main
 - GUI と追従カメラで 100 ステップを完走。
 - 元環境のランダム化を無効化し、同じ指令で 2 体・100 ステップを比較。観測の最大絶対差は約 `3e-6`、トルクは比較許容誤差内で一致。
 - 速度観測の各座標系・遅延と部分リセット、設定の許可リストのテストに成功。
+- 新規 conda 環境へのインストールからの通し実行に成功。
 
-CPU 実行と、新規 conda 環境へのインストールからの通し実行は未検証です。
+CPU 実行は未検証です。
