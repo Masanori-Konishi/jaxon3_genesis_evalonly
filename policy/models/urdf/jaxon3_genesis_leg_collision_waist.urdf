@@ -1,0 +1,753 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="JAXON_BLUE">
+  <link name="BODY">
+    <visual>
+      <origin xyz="0 0 1.0235" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/BODY_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="3.76103" />
+      <origin xyz="-0.03316 -0.00088 0.03507" rpy="0 -0 0" />
+      <inertia ixx="0.01805" ixy="-3e-05" ixz="-0.00184" iyy="0.01287" iyz="7e-05" izz="0.01943" />
+    </inertial>
+  </link>
+  <link name="CHEST_LINK0">
+    <visual>
+      <origin xyz="0 0 0.1" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/CHEST_LINK0_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.76781" />
+      <origin xyz="0.004 0.00012 0.03545" rpy="0 -0 0" />
+      <inertia ixx="0.0013" ixy="-0.0001" ixz="3e-05" iyy="0.00218" iyz="8.13152e-20" izz="0.00184" />
+    </inertial>
+  </link>
+  <link name="CHEST_LINK1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/CHEST_LINK1_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="4.65758" />
+      <origin xyz="-0.01482 0.0004 0.13999" rpy="0 -0 0" />
+      <inertia ixx="0.03054" ixy="2.40557e-19" ixz="-0.00034" iyy="0.02432" iyz="-5e-05" izz="0.02858" />
+    </inertial>
+  </link>
+  <link name="CHEST_LINK2">
+    <visual>
+      <origin xyz="0 0 0.221" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/CHEST_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="6.0826" />
+      <origin xyz="-0.01664 0.00194 0.06047" rpy="0 -0 0" />
+      <inertia ixx="0.04817" ixy="4e-05" ixz="0.0031" iyy="0.02522" iyz="-0.00103" izz="0.06018" />
+    </inertial>
+  </link>
+  <link name="HEAD_LINK0">
+    <visual>
+      <origin xyz="-0.015 0 0.0835" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/HEAD_LINK0_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="2" />
+      <origin xyz="0 0 0.1" rpy="0 -0 0" />
+      <inertia ixx="0.1031" ixy="0" ixz="0" iyy="0.0035" iyz="0" izz="0.00119" />
+    </inertial>
+  </link>
+  <link name="HEAD_LINK1">
+    <visual>
+      <origin xyz="0 0 0.102" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/HEAD_LINK1_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.001" />
+      <origin xyz="0.042 0.004 0.058" rpy="0 -0 0" />
+      <inertia ixx="0.035683" ixy="0.000877" ixz="-0.003172" iyy="0.040037" iyz="0.000652" izz="0.035345" />
+    </inertial>
+  </link>
+  <link name="LARM_LINK0">
+    <visual>
+      <origin xyz="0.01 0.105 0.049" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK0_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.65104" />
+      <origin xyz="0.0032 0.03084 0.0004" rpy="0 -0 0" />
+      <inertia ixx="0.00093" ixy="-2e-05" ixz="1e-05" iyy="0.00097" iyz="-8.59738e-20" izz="0.00072" />
+    </inertial>
+  </link>
+  <link name="LARM_LINK1">
+    <visual>
+      <origin xyz="0 0.088 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK1_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.37179" />
+      <origin xyz="0.01206 0.00989 -0.08848" rpy="0 -0 0" />
+      <inertia ixx="0.00336" ixy="-4.74338e-19" ixz="-0.00016" iyy="0.0041" iyz="0.00011" izz="0.00256" />
+    </inertial>
+  </link>
+  <link name="LARM_LINK2">
+    <visual>
+      <origin xyz="0 0 -0.158" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.66925" />
+      <origin xyz="-0.00777 -0.00521 -0.0589" rpy="0 -0 0" />
+      <inertia ixx="0.00488" ixy="-2e-05" ixz="-0.00032" iyy="0.00476" iyz="-0.00039" izz="0.00188" />
+    </inertial>
+  </link>
+  <link name="LARM_LINK3">
+    <visual>
+      <origin xyz="0 0 -0.172" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK3_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.02751" />
+      <origin xyz="-0.00381 -0.00092 -0.04747" rpy="0 -0 0" />
+      <inertia ixx="0.00261" ixy="1e-05" ixz="-0.0002" iyy="0.00273" iyz="3e-05" izz="0.00103" />
+    </inertial>
+  </link>
+  <gazebo reference="LARM_LINK3">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+  </gazebo>
+  <link name="LARM_LINK4">
+    <visual>
+      <origin xyz="0 0 -0.145" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK4_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.68704" />
+      <origin xyz="-0.00656 -0.00722 -0.0451" rpy="0 -0 0" />
+      <inertia ixx="0.00098" ixy="3e-05" ixz="-1e-05" iyy="0.00101" iyz="-0.00016" izz="0.00082" />
+    </inertial>
+  </link>
+  <link name="LARM_LINK5">
+    <visual>
+      <origin xyz="0 0 -0.115" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK5_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.25" />
+      <origin xyz="0.01271 2e-05 -0.08415" rpy="0 -0 0" />
+      <inertia ixx="0.00533939" ixy="0" ixz="0" iyy="0.00624028" iyz="0" izz="0.00205604" />
+    </inertial>
+  </link>
+  <link name="LARM_LINK6">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LARM_LINK6_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.25" />
+      <origin xyz="0.00013 0.01427 0.00188" rpy="0 -0 0" />
+      <inertia ixx="0.000901789" ixy="0" ixz="0" iyy="0.000626727" iyz="0" izz="0.000593753" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK0">
+    <visual>
+      <origin xyz="0.01 -0.105 0.049" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK0_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.65104" />
+      <origin xyz="0.0032 -0.03084 0.0004" rpy="0 -0 0" />
+      <inertia ixx="0.00093" ixy="2e-05" ixz="1e-05" iyy="0.00097" iyz="8.59738e-20" izz="0.00072" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK1">
+    <visual>
+      <origin xyz="0 -0.088 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK1_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.37179" />
+      <origin xyz="0.01206 -0.00989 -0.08848" rpy="0 -0 0" />
+      <inertia ixx="0.00336" ixy="1.35525e-20" ixz="-0.00016" iyy="0.0041" iyz="-0.00011" izz="0.00256" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK2">
+    <visual>
+      <origin xyz="0 0 -0.158" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.66925" />
+      <origin xyz="-0.00777 0.00521 -0.0589" rpy="0 -0 0" />
+      <inertia ixx="0.00488" ixy="2e-05" ixz="-0.00032" iyy="0.00476" iyz="0.00039" izz="0.00188" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK3">
+    <visual>
+      <origin xyz="0 0 -0.172" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK3_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.02751" />
+      <origin xyz="-0.00381 0.00092 -0.04747" rpy="0 -0 0" />
+      <inertia ixx="0.00261" ixy="-1e-05" ixz="-0.0002" iyy="0.00273" iyz="-3e-05" izz="0.00103" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK4">
+    <visual>
+      <origin xyz="0 0 -0.145" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK4_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.68704" />
+      <origin xyz="-0.00656 0.00722 -0.0451" rpy="0 -0 0" />
+      <inertia ixx="0.00098" ixy="3e-05" ixz="-1e-05" iyy="0.00101" iyz="-0.00016" izz="0.00082" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK5">
+    <visual>
+      <origin xyz="0 0 -0.115" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK5_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.25" />
+      <origin xyz="0.01271 -2e-05 -0.08415" rpy="0 -0 0" />
+      <inertia ixx="0.00533939" ixy="0" ixz="0" iyy="0.00624028" iyz="0" izz="0.00205604" />
+    </inertial>
+  </link>
+  <link name="RARM_LINK6">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RARM_LINK6_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.25" />
+      <origin xyz="0.00013 -0.01427 0.00188" rpy="0 -0 0" />
+      <inertia ixx="0.000901789" ixy="0" ixz="0" iyy="0.000626727" iyz="0" izz="0.000593753" />
+    </inertial>
+  </link>
+  <link name="LLEG_LINK0">
+    <visual>
+      <origin xyz="0 0.1 -0.031" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK0_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.23024" />
+      <origin xyz="-0.02348 -0.02205 -0.02664" rpy="0 -0 0" />
+      <inertia ixx="0.00294" ixy="-0.00015" ixz="-9e-05" iyy="0.0035" iyz="1e-05" izz="0.00265" />
+    </inertial>
+  </link>
+  <link name="LLEG_LINK1">
+    <visual>
+      <origin xyz="0 0 -0.11" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK1_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.99859" />
+      <origin xyz="-0.00463 -0.00287 0.00186" rpy="0 -0 0" />
+      <inertia ixx="0.00199" ixy="3e-05" ixz="8e-05" iyy="0.00249" iyz="-2e-05" izz="0.00274" />
+    </inertial>
+  </link>
+  <link name="LLEG_LINK2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.9446" />
+      <origin xyz="0.01513 0.00925 -0.22185" rpy="0 -0 0" />
+      <inertia ixx="0.06638" ixy="0.00025" ixz="-0.00167" iyy="0.06489" iyz="-0.00058" izz="0.01059" />
+    </inertial>
+  </link>
+  <link name="LLEG_LINK3">
+    <visual>
+      <origin xyz="0 0 -0.38" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK3_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.7482" />
+      <origin xyz="0.01335 0.00789 -0.13048" rpy="0 -0 0" />
+      <inertia ixx="0.02797" ixy="5e-05" ixz="0.00127" iyy="0.02794" iyz="-0.00147" izz="0.00286" />
+    </inertial>
+  </link>
+  <link name="LLEG_LINK4">
+    <visual>
+      <origin xyz="0 0 -0.4" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK4_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.6488" />
+      <origin xyz="-0.00093 -0.00118 0.00081" rpy="0 -0 0" />
+      <inertia ixx="0.00059" ixy="3.51617e-20" ixz="-3e-05" iyy="0.00094" iyz="3.72034e-19" izz="0.0008" />
+    </inertial>
+  </link>
+  <link name="LLEG_LINK5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK5_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/LLEG_LINK5_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="2.7977" />
+      <origin xyz="0.02227 0.00641 -0.08217" rpy="0 -0 0" />
+      <inertia ixx="0.00204" ixy="-0.00099" ixz="0.0002" iyy="0.00593" iyz="-6e-05" izz="0.00626" />
+    </inertial>
+  </link>
+  <link name="RLEG_LINK0">
+    <visual>
+      <origin xyz="0 -0.1 -0.031" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK0_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.23024" />
+      <origin xyz="-0.02348 0.02205 -0.02664" rpy="0 -0 0" />
+      <inertia ixx="0.00294" ixy="-0.00015" ixz="-9e-05" iyy="0.0035" iyz="1e-05" izz="0.00265" />
+    </inertial>
+  </link>
+  <link name="RLEG_LINK1">
+    <visual>
+      <origin xyz="0 0 -0.11" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK1_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.99859" />
+      <origin xyz="-0.00463 0.00287 0.00186" rpy="0 -0 0" />
+      <inertia ixx="0.00199" ixy="3e-05" ixz="8e-05" iyy="0.00249" iyz="-2e-05" izz="0.00274" />
+    </inertial>
+  </link>
+  <link name="RLEG_LINK2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK2_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="3.9446" />
+      <origin xyz="0.01513 -0.00925 -0.22185" rpy="0 -0 0" />
+      <inertia ixx="0.06638" ixy="0.00025" ixz="-0.00167" iyy="0.06489" iyz="-0.00058" izz="0.01059" />
+    </inertial>
+  </link>
+  <link name="RLEG_LINK3">
+    <visual>
+      <origin xyz="0 0 -0.38" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK3_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="1.7482" />
+      <origin xyz="0.01335 -0.00789 -0.13048" rpy="0 -0 0" />
+      <inertia ixx="0.02797" ixy="5e-05" ixz="0.00127" iyy="0.02794" iyz="-0.00147" izz="0.00286" />
+    </inertial>
+  </link>
+  <link name="RLEG_LINK4">
+    <visual>
+      <origin xyz="0 0 -0.4" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK4_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    
+    <inertial>
+      <mass value="0.6488" />
+      <origin xyz="-0.00093 0.00118 0.00081" rpy="0 -0 0" />
+      <inertia ixx="0.00059" ixy="3.51617e-20" ixz="-3e-05" iyy="0.00094" iyz="3.72034e-19" izz="0.0008" />
+    </inertial>
+  </link>
+  <link name="RLEG_LINK5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK5_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/RLEG_LINK5_mesh.dae" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="2.7977" />
+      <origin xyz="0.02227 -0.00641 -0.08217" rpy="0 -0 0" />
+      <inertia ixx="0.00204" ixy="-0.00099" ixz="0.0002" iyy="0.00593" iyz="-6e-05" izz="0.00626" />
+    </inertial>
+  </link>
+  <joint name="CHEST_JOINT0" type="fixed">
+    <parent link="BODY" />
+    <child link="CHEST_LINK0" />
+    <origin xyz="0 0 0.1" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.785398" upper="0.785398" effort="500" velocity="10.6749" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="CHEST_JOINT1" type="revolute">
+    <parent link="CHEST_LINK0" />
+    <child link="CHEST_LINK1" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.593412" upper="1.22173" effort="560" velocity="12.1999" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="CHEST_JOINT2" type="fixed">
+    <parent link="CHEST_LINK1" />
+    <child link="CHEST_LINK2" />
+    <origin xyz="0 0 0.221" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="300" velocity="12.1999" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="HEAD_JOINT0" type="fixed">
+    <parent link="CHEST_LINK2" />
+    <child link="HEAD_LINK0" />
+    <origin xyz="-0.015 0 0.0835" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.392699" upper="0.392699" effort="287.171" velocity="4" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="HEAD_JOINT1" type="fixed">
+    <parent link="HEAD_LINK0" />
+    <child link="HEAD_LINK1" />
+    <origin xyz="0 0 0.102" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.549779" upper="0.671952" effort="287.171" velocity="4" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT0" type="revolute">
+    <parent link="CHEST_LINK2" />
+    <child link="LARM_LINK0" />
+    <origin xyz="0.01 0.105 0.049" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.0472" upper="3.31613" effort="189.946" velocity="15.5966" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT1" type="revolute">
+    <parent link="LARM_LINK0" />
+    <child link="LARM_LINK1" />
+    <origin xyz="0 0.088 0" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.174533" upper="3.31613" effort="212.301" velocity="14.6608" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT2" type="revolute">
+    <parent link="LARM_LINK1" />
+    <child link="LARM_LINK2" />
+    <origin xyz="0 0 -0.158" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0944" upper="2.0944" effort="99.6363" velocity="17.0871" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT3" type="revolute">
+    <parent link="LARM_LINK2" />
+    <child link="LARM_LINK3" />
+    <origin xyz="0 0 -0.172" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.95" upper="0" effort="169.825" velocity="17.6211" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT4" type="fixed">
+    <parent link="LARM_LINK3" />
+    <child link="LARM_LINK4" />
+    <origin xyz="0 0 -0.145" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.87979" upper="2.87979" effort="145" velocity="12.797" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT5" type="fixed">
+    <parent link="LARM_LINK4" />
+    <child link="LARM_LINK5" />
+    <origin xyz="0 0 -0.115" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="48.0469" velocity="38.7169" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LARM_JOINT6" type="fixed">
+    <parent link="LARM_LINK5" />
+    <child link="LARM_LINK6" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="48.0469" velocity="38.7169" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT0" type="revolute">
+    <parent link="CHEST_LINK2" />
+    <child link="RARM_LINK0" />
+    <origin xyz="0.01 -0.105 0.049" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.31613" upper="1.0472" effort="189.946" velocity="15.5966" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT1" type="revolute">
+    <parent link="RARM_LINK0" />
+    <child link="RARM_LINK1" />
+    <origin xyz="0 -0.088 0" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.31613" upper="0.174533" effort="212.301" velocity="14.6608" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT2" type="revolute">
+    <parent link="RARM_LINK1" />
+    <child link="RARM_LINK2" />
+    <origin xyz="0 0 -0.158" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0944" upper="2.0944" effort="99.6363" velocity="17.0871" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT3" type="revolute">
+    <parent link="RARM_LINK2" />
+    <child link="RARM_LINK3" />
+    <origin xyz="0 0 -0.172" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.95" upper="0" effort="169.825" velocity="17.6211" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT4" type="fixed">
+    <parent link="RARM_LINK3" />
+    <child link="RARM_LINK4" />
+    <origin xyz="0 0 -0.145" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.87979" upper="2.87979" effort="145" velocity="12.797" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT5" type="fixed">
+    <parent link="RARM_LINK4" />
+    <child link="RARM_LINK5" />
+    <origin xyz="0 0 -0.115" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="48.0469" velocity="38.7169" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RARM_JOINT6" type="fixed">
+    <parent link="RARM_LINK5" />
+    <child link="RARM_LINK6" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="48.0469" velocity="38.7169" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LLEG_JOINT0" type="revolute">
+    <parent link="BODY" />
+    <child link="LLEG_LINK0" />
+    <origin xyz="0 0.1 -0.031" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="120" velocity="16.0751" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LLEG_JOINT1" type="revolute">
+    <parent link="LLEG_LINK0" />
+    <child link="LLEG_LINK1" />
+    <origin xyz="0 0 -0.11" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.523599" upper="1.0472" effort="340" velocity="11.0192" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LLEG_JOINT2" type="revolute">
+    <parent link="LLEG_LINK1" />
+    <child link="LLEG_LINK2" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.0944" upper="0.959931" effort="700" velocity="15.6576" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LLEG_JOINT3" type="revolute">
+    <parent link="LLEG_LINK2" />
+    <child link="LLEG_LINK3" />
+    <origin xyz="0 0 -0.38" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="2.74889" effort="700" velocity="14.5236" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LLEG_JOINT4" type="revolute">
+    <parent link="LLEG_LINK3" />
+    <child link="LLEG_LINK4" />
+    <origin xyz="0 0 -0.4" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.39626" upper="1.309" effort="220" velocity="13.3089" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="LLEG_JOINT5" type="revolute">
+    <parent link="LLEG_LINK4" />
+    <child link="LLEG_LINK5" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.0472" upper="1.0472" effort="120" velocity="15.182" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RLEG_JOINT0" type="revolute">
+    <parent link="BODY" />
+    <child link="RLEG_LINK0" />
+    <origin xyz="0 -0.1 -0.031" rpy="0 -0 0 " />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="120" velocity="16.0751" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RLEG_JOINT1" type="revolute">
+    <parent link="RLEG_LINK0" />
+    <child link="RLEG_LINK1" />
+    <origin xyz="0 0 -0.11" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.0472" upper="0.523599" effort="340" velocity="11.0192" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RLEG_JOINT2" type="revolute">
+    <parent link="RLEG_LINK1" />
+    <child link="RLEG_LINK2" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-2.0944" upper="0.959931" effort="700" velocity="15.6576" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RLEG_JOINT3" type="revolute">
+    <parent link="RLEG_LINK2" />
+    <child link="RLEG_LINK3" />
+    <origin xyz="0 0 -0.38" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="2.74889" effort="700" velocity="14.5236" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RLEG_JOINT4" type="revolute">
+    <parent link="RLEG_LINK3" />
+    <child link="RLEG_LINK4" />
+    <origin xyz="0 0 -0.4" rpy="0 -0 0 " />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.39626" upper="1.309" effort="220" velocity="13.3089" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="RLEG_JOINT5" type="revolute">
+    <parent link="RLEG_LINK4" />
+    <child link="RLEG_LINK5" />
+    <origin xyz="0 0 0" rpy="0 -0 0 " />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.0472" upper="1.0472" effort="120" velocity="15.182" />
+    <dynamics damping="0.2" friction="0" />
+  </joint>
+  <joint name="rleg_end_coords_joint" type="fixed">
+		<origin rpy="0.000000 -0.000000 0.000000" xyz="0.054 0 -0.1" />
+		<parent link="RLEG_LINK5" />
+		<child link="rleg_end_coords" />
+	</joint>
+	<link name="rleg_end_coords" />
+	<joint name="lleg_end_coords_joint" type="fixed">
+		<origin rpy="0.000000 -0.000000 0.000000" xyz="0.054 0 -0.1" />
+		<parent link="LLEG_LINK5" />
+		<child link="lleg_end_coords" />
+	</joint>
+	<link name="lleg_end_coords" />
+	<joint name="rarm_end_coords_joint" type="fixed">
+		<origin rpy="-0.000000 1.570796 0.000000" xyz="0 0 -0.22" />
+		<parent link="RARM_LINK6" />
+		<child link="rarm_end_coords" />
+	</joint>
+	<link name="rarm_end_coords" />
+	<joint name="larm_end_coords_joint" type="fixed">
+		<origin rpy="-0.000000 1.570796 0.000000" xyz="0 0 -0.22" />
+		<parent link="LARM_LINK6" />
+		<child link="larm_end_coords" />
+	</joint>
+	<link name="larm_end_coords" />
+	<joint name="head_end_coords_joint" type="fixed">
+		<origin rpy="-0.000000 1.570796 0.000000" xyz="0.1 0.0 0.1" />
+		<parent link="HEAD_LINK1" />
+		<child link="head_end_coords" />
+	</joint>
+	<link name="head_end_coords" />
+</robot>

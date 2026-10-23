@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+*.pt
+*.pth
+*.pkl
+*.pickle
+logs/
+events.out.tfevents.*
+.DS_Store
