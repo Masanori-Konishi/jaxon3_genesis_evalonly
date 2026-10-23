@@ -33,17 +33,16 @@ jaxon3_evalonly/
 ├── jaxon3_eval.py
 ├── jaxon3_env_evalonly.py
 ├── requirements.txt
-├── policy/
-│   ├── policy.pt                 # 推論用学習済モデル
-│   ├── eval_config.json          # この policy.pt と対になる評価設定
-│   └── models/
-│       ├── urdf/                # 選択された 1 個の URDF
-│       └── meshes/              # URDF が参照するメッシュのみ
-└── tools/export_policy.py       # モデル提供者向け
+└── policy/
+    ├── policy.pt                 # 推論用学習済モデル
+    ├── eval_config.json          # この policy.pt と対になる評価設定
+    └── models/
+        ├── urdf/                # 選択された 1 個の URDF
+        └── meshes/              # URDF が参照するメッシュのみ
 ```
 
 `policy.pt` は TorchScript 形式です。学習時の `model_2500.pt` 等を名前だけ変更しても使えません。
-提供者が後述のコマンドで推論用に変換します。観測の正規化統計もこのファイルに含まれます。
+提供者が推論用に変換したものを使用します。観測の正規化統計もこのファイルに含まれます。
 評価設定には関節順序・PD ゲイン・観測スケールなど、推論とシミュレーションに必要な項目だけを保存します。
 起動時に重みとモデルファイルの SHA-256 を確認し、異なる組み合わせを検出します。
 
@@ -96,32 +95,9 @@ python jaxon3_eval.py --bundle /path/to/another_policy --command 5.0 0.0 0.0
 
 この構成は共有したポリシーの走行を再生・観察するためのものです。学習環境でのスコア集計や、その終了条件を含む性能評価は行いません。
 
-## モデル提供者用メモ: 別のチェックポイントを書き出す
+## モデル提供者向け
 
-この操作は、元のチェックポイントと対応する `cfgs.pkl` を保持する側だけで行います。
-自分が作成した信頼できる `cfgs.pkl` を指定してください（pickle の読込はコードを実行できる形式です）。
-評価設定を手で推測せず、必ずそのチェックポイントの学習設定を使います。
-
-既存の学習用環境で `rsl-rl-lib==5.5.1` を使用してください。
-書き出しに必要な実装は [RSL-RL 5.5.1](https://pypi.org/project/rsl-rl-lib/5.5.1/) に含まれます。
-
-```bash
-python tools/export_policy.py \
-  --checkpoint /path/to/running/model_2500.pt \
-  --config /path/to/running/cfgs.pkl \
-  --output /path/to/new_policy_bundle
-```
-
-`--config` を省略するとチェックポイントと同じフォルダの `cfgs.pkl` を使います。
-出力先には新しいフォルダ名を指定してください。既存フォルダは上書きしません。
-URDF の元の保存場所が変わった場合は `--model-dir /path/to/models/jaxon3/urdf` を指定します。
-複数 URDF で学習したモデルは `--urdf-index 0` 等で 1 個を選択します。
-対応するのは 5.5.1 の MLP actor と通常走行の観測形式です。旧 rsl-rl のチェックポイントや別タスクは対象外です。
-
-出力先に推論用 `.pt`、評価設定、必要なモデルがまとめて作成されます。
-書き出し時には元の actor と推論用モデルの出力をバッチ数 1・4 で比較します。
-共有するのは出力フォルダの内容です。元の `cfgs.pkl` と学習チェックポイントは共有用リポジトリに置きません。
-新しいモデルへ差し替える際は、JSON・URDF・メッシュも同じ出力一式に更新してください。
+チェックポイントの書き出し・配布・設定書き出しの検査については、[モデル提供者向け README](README_model_provider.md) を参照してください。
 
 ## トラブル対応
 
@@ -132,7 +108,7 @@ URDF の元の保存場所が変わった場合は `--model-dir /path/to/models/
 - CPU で動作を切り分ける場合は `--device cpu --headless --max-steps 10` を指定します。
 - DAE 読込時の legacy parser / convex hull に関する警告は元モデルでも生じます。物理特性の再現性のため Genesis のバージョンを固定してください。
 
-設定書き出しの検査は `python -m unittest discover -s tests`、シミュレーションの確認は上記の headless コマンドで実行します。
+シミュレーションの確認は上記の headless コマンドで実行します。
 
 ## 動作確認記録
 
